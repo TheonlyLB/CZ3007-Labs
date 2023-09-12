@@ -79,6 +79,36 @@ public class LexerTests {
 				new Token(STRING_LITERAL, 0, 0, "\\n"),
 				new Token(EOF, 0, 4, ""));
 	}
+	
+	@Test
+	public void testPunctuation() {
+		runtest("[]{}()", new Token(LBRACKET, 0, 0, "["), new Token(RBRACKET, 0, 1, "]"),
+				new Token(LCURLY, 0, 2, "{"), new Token(RCURLY, 0, 3, "}"),
+				new Token(LPAREN, 0, 4, "("), new Token(RPAREN, 0, 5, ")"),
+				new Token(EOF, 0, 6, ""));
+	}
 
+	@Test
+	public void testIntWithTrailingZeros() {
+		runtest("123400", new Token(INT_LITERAL, 0, 0, "123400"), new Token(EOF, 0, 6, ""));
+	}
+
+	@Test
+	public void testIntWithLeadingZeros() {
+		runtest("0100", new Token(INT_LITERAL, 0, 0, "0100"), new Token(EOF, 0, 4, ""));
+	}
+
+	@Test
+	public void testSignedInt() {
+		runtest("-123", new Token(MINUS, 0, 0, "-"), new Token(INT_LITERAL, 0, 1, "123"),
+				new Token(EOF, 0, 4, ""));
+	}
+
+	@Test
+	public void testDeclaration() {
+		runtest("int x_1 = \"hello world\"", new Token(INT, 0, 0, "int"),
+				new Token(ID, 0, 4, "x_1"), new Token(EQL, 0, 8, "="),
+				new Token(STRING_LITERAL, 0, 10, "hello world"), new Token(EOF, 0, 23, ""));
+	}
 
 }

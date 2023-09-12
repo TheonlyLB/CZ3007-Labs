@@ -37,7 +37,9 @@ import static frontend.Token.Type.*;
 
 /* This definition may come in handy. If you wish, you can add more definitions here. */
 WhiteSpace = [ ] | \t | \f | \n | \r
-
+Digit = [0-9]
+Alpha = [a-zA-Z]
+StringLiteral = \" [^\"\n]* \"
 
 %%
 /* put in your rules here.    */
@@ -59,6 +61,38 @@ WhiteSpace = [ ] | \t | \f | \n | \r
 "type"						{ return token(TYPE); }
 "void"						{ return token(VOID); }
 "while"						{ return token(WHILE); }
+
+/* Punctuation Symbols */
+"," { return token(COMMA); }
+"[" { return token(LBRACKET); }
+"]" { return token(RBRACKET); }
+"{" { return token(LCURLY); }
+"}" { return token(RCURLY); }
+"(" { return token(LPAREN); }
+")" { return token(RPAREN); }
+";" { return token(SEMICOLON); }
+
+/*
+ An identifier in PL/3007 is a sequence of one or more characters.
+ The first character must be a letter. Each subsequent character in the
+ sequence must be a letter, a digit or an underscore.
+ */
+{Alpha}({Alpha}|{Digit}|_)* { return token(ID); }
+
+/*
+  Integer literals consist of a sequence of one or more decimal digits.
+  Note that integer literals are unsigned: positive or negative sign are
+  considered to be unary operators.
+  Also note that superfluous leading zeros are allowed.
+ */
+{Digit}+ { return token(INT_LITERAL); }
+
+/*
+  String literals in PL/3007 are enclosed by double quotes,
+  and may contain zero or more characters
+  (except the double quote and the newline character).
+ */
+{StringLiteral} { return token(STRING_LITERAL, yytext().substring(1, yytext().length() - 1)); }
 
 /* You don't need to change anything below this line. */
 .							{ throw new Error("unexpected character '" + yytext() + "'"); }

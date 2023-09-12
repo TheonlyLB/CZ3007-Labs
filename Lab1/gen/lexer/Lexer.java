@@ -238,7 +238,7 @@ public final class Lexer {
   private boolean zzAtEOF;
 
   /* user code: */
-	/* These two methods are for the convenience of rules to create toke objects.
+	/* These two methods are for the convenience of rules to create token objects.
 	* If you do not want to use them, delete them
 	* otherwise add the code in 
 	*/
