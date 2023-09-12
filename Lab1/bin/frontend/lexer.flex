@@ -72,6 +72,20 @@ StringLiteral = \" [^\"\n]* \"
 ")" { return token(RPAREN); }
 ";" { return token(SEMICOLON); }
 
+/* Operators */
+"/" { return token(DIV); }
+"==" { return token(EQEQ); }
+"=" { return token(EQL); }
+">=" { return token(GEQ); }
+">" { return token(GT); }
+"<=" { return token(LEQ); }
+"<" { return token(LT); }
+"-" { return token(MINUS); }
+"!=" { return token(NEQ); }
+"+" { return token(PLUS); }
+"*" { return token(TIMES); }
+
+
 /*
  An identifier in PL/3007 is a sequence of one or more characters.
  The first character must be a letter. Each subsequent character in the

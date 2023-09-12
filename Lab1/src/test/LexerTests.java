@@ -111,4 +111,14 @@ public class LexerTests {
 				new Token(STRING_LITERAL, 0, 10, "hello world"), new Token(EOF, 0, 23, ""));
 	}
 
+	@Test
+	public void testOperators() {
+		runtest("+/*>===",
+				new Token(PLUS, 0, 0, "+"),
+				new Token(DIV, 0, 1, "/"),
+				new Token(TIMES, 0, 2, "*"),
+				new Token(GEQ, 0, 3, ">="),
+				new Token(EQEQ, 0, 5, "=="),
+				new Token(EOF, 0, 7, ""));
+	}
 }
