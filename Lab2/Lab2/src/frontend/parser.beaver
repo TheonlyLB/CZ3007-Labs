@@ -33,7 +33,52 @@
 		  ;
   */
 
-Module = ;
+Module = MODULE ID LCURLY Import Decl RCURLY;
+
+Import = Import IMPORT ID SEMICOLON
+  | /* empty */
+  ;
+
+Decl = Decl FnDecl
+  | Decl FieldDecl
+  | Decl TypeDecl
+  | /* empty */
+  ;
+
+FnDecl = Accessibility TypeName ID LPAREN ParamList RPAREN LCURLY Stmt RCURLY;
+
+FieldDecl = Accessibility TypeName ID EQL STRING_LITERAL SEMICOLON;
+
+TypeDecl = Accessibility TYPE ID EQL STRING_LITERAL SEMICOLON;
+
+Accessibility = PUBLIC
+  | /* empty */
+  ;
+
+TypeName = PrimitiveType
+  | ArrayType
+  | ID
+  ;
+
+PrimitiveType = VOID
+  | BOOLEAN
+  | INT
+  ;
+
+ArrayType = TypeName LBRACKET RBRACKET; /* TODO: Use hint */
+
+ParamList = NonEmptyParamList
+  | /* empty */
+  ;
+
+/* avoids trailing commas */
+NonEmptyParamList = NonEmptyParamList COMMA Param
+  | Param
+  ;
+
+Param = TypeName ID;
+
+Stmt = ; /* TODO */
 
 /**/
 
