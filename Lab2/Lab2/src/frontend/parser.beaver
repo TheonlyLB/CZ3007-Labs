@@ -33,7 +33,83 @@
 		  ;
   */
 
-Module = ;
+Module = MODULE ID LCURLY Imports Decls RCURLY;
+
+/* IMPORT ID SEMICOLON Imports? */
+Imports = Imports IMPORT ID SEMICOLON
+  | /* empty */
+  ;
+
+/* FnDecl Decls? */
+Decls = Decls FuncDecl
+  | Decls FieldDecl
+  | Decls TypeDecl
+  | /* empty */
+  ;
+
+FuncDecl = Accessibility TypeName ID LPAREN ParamList RPAREN LCURLY Stmt RCURLY;
+
+FieldDecl = Accessibility TypeName ID  SEMICOLON;
+
+TypeDecl = Accessibility TYPE ID EQL STRING_LITERAL SEMICOLON;
+
+Accessibility = PUBLIC
+  | /* empty */
+  ;
+
+TypeName = PrimitiveType
+  | ArrayType
+  | ID
+  ;
+
+PrimitiveType = VOID
+  | BOOLEAN
+  | INT
+  ;
+
+ArrayType = TypeName LBRACKET RBRACKET; /* TODO: Use hint */
+
+ParamList = NonEmptyParamList
+  | /* empty */
+  ;
+
+/* avoids trailing commas */
+/* Param COMMA NonEmptyParamList?*/
+NonEmptyParamList = NonEmptyParamList COMMA Param
+  | Param
+  ;
+
+Param = TypeName ID;
+
+Stmt = LocalVarDecl 
+          | BlockStmt
+          | IfStmt
+          | WhileStmt
+          | BreakStmt
+          | ReturnStmt
+          | ExprStmt
+          ;
+
+LocalVarDecl = TypeName ID SEMICOLON ;
+
+BlockStmt = LCURLY Stmts RCURLY ;
+
+Stmts = Stmt Stmts
+              |
+              ;
+
+IfStmt = IF LPAREN Expr RPAREN Stmt ELSE Stmt
+       | IF LPAREN Expr RPAREN Stmt;
+
+WhileStmt = WHILE LPAREN Expr RPAREN Stmt ;
+
+BreakStmt = BREAK SEMICOLON ;
+
+ReturnStmt = RETURN SEMICOLON
+                | RETURN Expr SEMICOLON
+                ;
+
+ExprStmt = Expr SEMICOLON ;
 
 /**/
 
