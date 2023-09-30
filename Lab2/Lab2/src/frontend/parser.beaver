@@ -67,7 +67,10 @@ PrimitiveType = VOID
   | INT
   ;
 
-ArrayType = TypeName LBRACKET RBRACKET; /* TODO: Use hint */
+ArrayType = PrimitiveType LBRACKET RBRACKET
+		  | ArrayType LBRACKET RBRACKET
+		  | ID LBRACKET RBRACKET
+		  ;
 
 ParamList = NonEmptyParamList
   | /* empty */
