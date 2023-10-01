@@ -37,6 +37,24 @@ public class ParserTests {
 	public void testEmptyModule() {
 		runtest("module Test { }");
 	}
+
+  @Test
+  public void test() {
+    runtest(
+        "module Test {" 
+        + "	import module1;"
+        + "	int foo;"
+        + "	int addFive(int num) {"
+        + "		int newNum;"
+        + "		newNum = num + 5;"
+        + "		return newNum;"
+        + "	}"
+        + "	public void printNum(int num) {"
+        + "		print(num);"
+        + "	}"
+        + "}"
+    );
+  }
 	
 	@Test
 	public void testModuleImports() {
@@ -45,7 +63,7 @@ public class ParserTests {
 
 	@Test
 	public void testModuleTypeDecl() {
-		runtest("module Test {" + "public type int = \"INT\";" + "type float = \"FLOAT\";" + "}");
+		runtest("module Test {" + "public type MyInt = \"INT\";" + "type MyFloat = \"FLOAT\";" + "}");
 	}
 
 	@Test
@@ -70,11 +88,15 @@ public class ParserTests {
 
 	@Test
 	public void testModuleWhileIfFuncDecl() {
-		runtest("module Test {" + "public int func(int param) {" + " while(param < 10)"
-				+ " if(param%2 == 0) {param = param+1;}"
-				+ "	else {param = param*2;}" 
-				+ " return param;"
-				+ "}" + "}");
+		runtest(
+				"module Test {" 
+				+ "	public int func(int param) {" 
+				+ " 	while(param < 10)"
+				+ " 		if(param%2 == 0) {param = param+1;}"
+				+ "			else {param = param*2;}" 
+				+ " 	return param;"
+				+ "	}" 
+				+ "}"
+		);
 	}
-
 }
