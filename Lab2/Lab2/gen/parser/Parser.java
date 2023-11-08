@@ -25,8 +25,8 @@ public class Parser extends beaver.Parser {
 		static public final short INT = 12;
 		static public final short LCURLY = 13;
 		static public final short SEMICOLON = 14;
-		static public final short RBRACKET = 15;
-		static public final short RCURLY = 16;
+		static public final short RCURLY = 15;
+		static public final short RBRACKET = 16;
 		static public final short IF = 17;
 		static public final short WHILE = 18;
 		static public final short BREAK = 19;
@@ -51,31 +51,31 @@ public class Parser extends beaver.Parser {
 	}
 
 	static final ParsingTables PARSING_TABLES = new ParsingTables(
-		"U9pLLlbN5LKS$yomsDCUQeYs29eQY6oA628A20#rHCCqo2LIqHQfN38pTycbCkMSpkbqwZz" +
-		"eiNspLSkoigmiMompBIhICbiqBVlscVikup3lpNiWlzISyvdlzldUvJjtxhs0UI#gaO$BK8" +
-		"PoZC8bk1GJCGnpCGGNumBCnq9SY6v8GdVqmBau3#VZREKrqQlDcPDm1QhaGVI9cdcEApCQF" +
-		"wsD$FGsyhDT$5jn9QPZ94PZ36fmDKPW2PPY6LBG0ONo1VfY078mA8ItmUPLe3O2hvFDEmi#" +
-		"TFJanTWyLLjFNcmpJuvYCMezUN4sxpSimDqsBrnzfghwL2FWYWn7FAw9a34h9AT819CZP8n" +
-		"jEKfvN7x5BRWgRCP5UbIXaKpFo63FI85dP9ndP89dP4QKrbppn2fhxScFI41kI6mbrc85l#" +
-		"RjyEEsa6Wq#xgeZAxeWcj3lDTZ3kfm0sx4JIXnVKKtjpHAlBssgWvdaeYUI4Og#g4UlULBP" +
-		"A0$rY2BLcUzckivaw5Ohgs1qgIrFFwtwr2CyQZ4vPHJC1FJC1lpv0dSZDLOXFMu0njPtxjm" +
-		"9pQnZpIsdSv$8eEhAOkxGWu6yk$8vGhAKrymd$qKy7iMyYyOeRqzMOcsPWPtcN5daFbVuni" +
-		"yAMAu$yHnL#Z0tQoOkraddY5#hgzoeYlt#aJkhcvUBvjd#RrvPJPlZ5fbNZp3vWLhwyNpsx" +
-		"nWn8itgWKlnUPvroTSP3IA8cHKX8aXOePxb3xbYPJn$uouvnbSUpxw4a9Y8#dhhhm6TuJGT" +
-		"H7PZetAyBFV7Y7UthpzzE7vsOydadiURcwqU7ljO7LY#HSPh8LL9ODw5yfaLiTQ8m6zcWtE" +
-		"98axRT1AK7UFe5RCcr09wsSIblInfZx5wAphcgHa0djDu2fjMCMNyA7OHpHQDfyZn7s0KMh" +
-		"PpG3CMVJj9tPHdqV4KF#7WMtKAvtSS21dEZ59zt4$zIgjRwPUJSnWUmSefz2tXxA2iaddpc" +
-		"QiYN8cZLFQDoSeZUtQdklghuQnevfpZ3X9trJ2f2EPqgzvVQEDNOzp2xc3YGKwZy8i91Rg#" +
-		"CumSouZ5cbzFZ7M5Pz8BDTZhAI#KljNjwAUItLUH#hBj3wP#Wez7clEkqFpZ1tarEasDcWV" +
-		"lxzPxsXx8x64s4IiSVWRY7NDDfVE8KTzjX87YVNkFibhTBIHxiZf5csUOThQwz2FE#QLhzl" +
-		"Cr3BWY0MqRvgh5XEy#c6iHkVK4YSuxcBw4YbBhFMavnBVsd4pfyvbBpwjcu4m$3YNdUAorv" +
-		"xMSRYrusZ3UE$ny3$G$hRH0Ft8AJaXlrF#BN$9IRWU#LCQvLlvHWxA0VbQzYlVL#gzhmNlS" +
-		"sAlRNr6V4fyGkoHZsItyD#L3#LTldSIsucjn8loWcoHv#KvULQUaQVbAVb0vU#IzvLyJrwN" +
-		"L#HbUKbULVPcUPJln#GHULZP3wdtayHhiatUaRVbBTaXRyeRz7oiOZ#fzs6hNJaalyWH#Lb" +
-		"vVY2#KzhtSjmUzp7vGqbhLwtYtJAUTvXO0ho5c0w0DoaVxrAnl4t5ytvb4E0POjZ8Ss08Jv" +
-		"5c1DH90fuVCOJ1iyNaVT3mH3vvGubIyagPLy3Jge3dnp2YaBxX2Z6yHPeyzms5GRJJA2tqv" +
-		"nWjMFU1NFhBASCXXx4SocADRDhPb2KEfBAFLChq21Z0lYeehREZY6qKKS#WpAIqa4Lz$Bzp" +
-		"uM7c");
+		"U9pLLcbKLLKK$kvzI488g8aD3aJAe0626W8oWvg2bGMOvb1QY6Kvu9WJIEMKjbhziDN$rcg" +
+		"U1pKRRB09osmmiSd21XibRR9stptlS7dSzoxFjrYkLU#jx#xfs$kUS##vPn$0t8PgPE4IbA" +
+		"0COt0nnkDovE0cZCH5w8y5gCDPY4DVd8rpS2xEGp$q2ZcZJyWPvmVDI79a1EEdXCXFS$2NO" +
+		"Z9ceWXZCGxJCGDvM86RiHBno9Lc#GuNO0ZIaU77MstpJFBkS#LvR5wODAERA#zCczST4OXq" +
+		"vMssUMlLVDnuQsnUL0TUeESpLJsVQfGw8gDHZbcupY#IZojGYIhCxgJQX8xZaKTrpfKXvFo" +
+		"2PRn$EAO5p1ciH#qVkT0rCjmrakqQgN2DNEOQkJf8DSTCSGRcY20QFP3f5xi5iTWahLY8EQ" +
+		"Z1Sh#uqwxnyzHYBgx73PY76uDc5phUjJDU72JULTkxgXla61Rp$Qz3J$IcTKYlvaOq84Q#r" +
+		"TO0962LrWVYLWn28eOY6QdyYWim32Cm2fTIcuXhC0dNOWhcosEensrOX0su2hS3MC8dkXuR" +
+		"iOMvISnDuNSob2iebJj5Ecjay8qCPoNhhMMnNZRVOIw$Z3n#1V$5ZDFDDs1oJmlZJXRELTk" +
+		"TwoMIUrSKLsuPOhXpzMGVwSrztycBitdzoAjmvHashmTvOrnv9JPld5g7Rhm1Diyx7pTUiG" +
+		"lF$Va4YbWr2m94lFscl9Dgpl54w9n0rTnolFROJdF#dn7dJ6EeWnw3UwOp5irdDr1vmzZfO" +
+		"rsUKhlTryyJptDA0Zlc8FQOODdECOSQxwhjNQs6ybkmlXg3yAxcOkgbwZnXMPP$WjQZUVhn" +
+		"CEBXkIY2Nt4HFT4yqPdKOkdnmdgMLkrOtYyE1djKBFzz51VOkXRgjutOJUpKTXDWx24EM7O" +
+		"R07CQVHyJ7rAVJNc8ieg1EoahTUwzrAjzyvnWV3vHg$axgC$I$YMiEPbo0Oszb3Ce3#lOCi" +
+		"QEKjRHEA5z2xtIQDBs8iTzvZ7MgZajn4bYF$sHb76KlJGleRFnjjSpuidD91Rhl7eYXrYgu" +
+		"yC2pBMOMAxr5SHuHtmIiKhdvrDVe$qDmSTZhjHvHwYlrhxfn3hjdqaq##VXRdBcQlucBSar" +
+		"6trgRoQecXk9zJx#EuWDFhLgVVH6tgy$vLq1xhdFfqPocouY1ttqrc1pTjICwcWRXTe$MCi" +
+		"ydrY5zbKwSgQurpTgTCvKuXZ7dMyDqokDutektKvzl4QTmwvlrysI07pd$18TzfPs7IsdEe" +
+		"uGndjFO3zsTRqsjaB$v6$vGtwbF2b$oPzm$EHtTMsHh#HBEInVoEVocV9yggwVs3pkItBGj" +
+		"WuG7n7SgUG3sI$loNPg##HjNjyYNY5U97RA3jakpyepyhGy9K$A4$AkojyhxoZP92$Byx9B" +
+		"dfCNbFsGFCph8$AWFA3i#zNrSMAtl2HloXlokkoHr#HLUjvNiH$KzNkhhXoLd#Kd#L5vlY6" +
+		"EAErh#SqUzmavhkG$l5Jnb1NE4rGO0PuAJ1#0fwO8dfl2U78AvrdA8C1UOjWOuOEHx19jA5" +
+		"KT1UmZ7i9WXp5vHZHSaKNUA2AVF6lzPxDhPRERv12vz8rMyF1aQRBN6mePj9CeBIHpZ1QiC" +
+		"q0c$MMKWP3EM3fbeKOQxJJA8XyayXw9b2cTO0ZlLKvPph4MgDESmSxjOUys55AfJ$mNNMzS" +
+		"DW==");
 
 	static final Action RETURN6 = new Action() {
 		public Symbol reduce(Symbol[] _symbols, int offset) {
@@ -137,7 +137,7 @@ public class Parser extends beaver.Parser {
 			RETURN2,	// [4] Decls = Decls FieldDecl; returns 'FieldDecl' although none is marked
 			RETURN2,	// [5] Decls = Decls TypeDecl; returns 'TypeDecl' although none is marked
 			Action.NONE,  	// [6] Decls = 
-			RETURN9,	// [7] FuncDecl = Accessibility TypeName ID LPAREN ParamList RPAREN LCURLY Stmt RCURLY; returns 'RCURLY' although none is marked
+			RETURN9,	// [7] FuncDecl = Accessibility TypeName ID LPAREN ParamList RPAREN LCURLY Stmts RCURLY; returns 'RCURLY' although none is marked
 			RETURN4,	// [8] FieldDecl = Accessibility TypeName ID SEMICOLON; returns 'SEMICOLON' although none is marked
 			RETURN6,	// [9] TypeDecl = Accessibility TYPE ID EQL STRING_LITERAL SEMICOLON; returns 'SEMICOLON' although none is marked
 			Action.RETURN,	// [10] Accessibility = PUBLIC

@@ -25,14 +25,6 @@
 // temporary declaration, you can remove this once you have written all other rules
 //%goal Dummy;
 
-/* TODO: Flesh out the rule for Module, and add rules for other nonterminals. Here is an example
-         of a rule you may want to add:
-         
-   Accessibility = PUBLIC
-		  |
-		  ;
-  */
-
 Module = MODULE ID LCURLY Imports Decls RCURLY;
 
 /* IMPORT ID SEMICOLON Imports? */
@@ -47,9 +39,9 @@ Decls = Decls FuncDecl
   | /* empty */
   ;
 
-FuncDecl = Accessibility TypeName ID LPAREN ParamList RPAREN LCURLY Stmt RCURLY;
+FuncDecl = Accessibility TypeName ID LPAREN ParamList RPAREN LCURLY Stmts RCURLY;
 
-FieldDecl = Accessibility TypeName ID  SEMICOLON;
+FieldDecl = Accessibility TypeName ID SEMICOLON;
 
 TypeDecl = Accessibility TYPE ID EQL STRING_LITERAL SEMICOLON;
 
