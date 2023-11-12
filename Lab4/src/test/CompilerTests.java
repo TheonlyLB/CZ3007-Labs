@@ -134,4 +134,17 @@ public class CompilerTests {
 				new Object[0],
 				42);
 	}
+	
+	@Test public void testMethodCall() {
+		runtest("module Test {" +
+				" public int f(int x, int y) {" + 
+				"  return y;" + 
+				" }" + 
+				"}", 
+				"Test", 
+				"f", 
+				new Class<?>[] { int.class, int.class }, 
+				new Object[] { 23, 42 }, 
+				42); 
+	}
 }
