@@ -97,23 +97,21 @@ public class ExprCodeGenerator extends Visitor<Value> {
 	/** Generate code for an integer literal. */
 	@Override
 	public Value visitIntLiteral(IntLiteral nd) {
-		/* TODO: return something meaningful here */
-		return null;
+		return IntConstant.v(nd.getValue());
 	}
 	
 	/** Generate code for a string literal. */
 	@Override
 	public Value visitStringLiteral(StringLiteral nd) {
-		/* TODO: return something meaningful here */
-		return null;
+		return StringConstant.v(nd.getValue());
 	}
 	
 	/** Generate code for a Boolean literal. */
 	@Override
 	public Value visitBooleanLiteral(BooleanLiteral nd) {
-		/* TODO: return something meaningful here (hint: translate 'true' to integer
-		 *       constant 1, 'false' to integer constant 0) */
-		return null;
+		Boolean val = nd.getValue();
+		int intVal = val ? 1 : 0;
+		return IntConstant.v(intVal);
 	}
 	
 	/** Generate code for an array literal. */

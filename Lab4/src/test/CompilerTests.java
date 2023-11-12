@@ -147,4 +147,43 @@ public class CompilerTests {
 				new Object[] { 23, 42 }, 
 				42); 
 	}
+	
+	@Test public void testIntLiteral() {
+		runtest("module Test {" +
+				" public int f() {" + 
+				"  return 100;" + 
+				" }" + 
+				"}", 
+				"Test", 
+				"f", 
+				new Class<?>[] {}, 
+				new Object[] {}, 
+				100); 
+	}
+	
+	@Test public void testStringLiteral() {
+		runtest("module Test {" +
+				" public int f() {" + 
+				"  return \"cz3007\";" + 
+				" }" + 
+				"}", 
+				"Test", 
+				"f", 
+				new Class<?>[] {}, 
+				new Object[] {}, 
+				"cz3007"); 
+	}
+	
+	@Test public void testBooleanLiteral() {
+		runtest("module Test {" +
+				" public int f() {" + 
+				"  return true;" + 
+				" }" + 
+				"}", 
+				"Test", 
+				"f", 
+				new Class<?>[] {}, 
+				new Object[] {}, 
+				true); 
+	}
 }
